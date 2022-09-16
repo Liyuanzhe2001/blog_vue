@@ -47,6 +47,31 @@
       </div>
     </el-menu>
 
+    <el-dialog v-model="userLogin" title="用户登录" width="400px" center>
+      <el-form :model="user" label-width="0px" class="login_form">
+        <el-form-item>
+          <el-input v-model="user.name"> </el-input>
+        </el-form-item>
+        <el-form-item>
+          <el-input v-model="user.password" type="password"> </el-input>
+        </el-form-item>
+        <el-row justify="end">
+          <el-form-item class="login_btn">
+            <el-button type="primary">登录</el-button>
+            <el-button type="info">重置</el-button>
+          </el-form-item>
+        </el-row>
+      </el-form>
+      <!--      <template #footer>-->
+      <!--        <span class="dialog-footer">-->
+      <!--          <el-button @click="userLogin = false">取消</el-button>-->
+      <!--          <el-button type="primary" @click="userLogin = false">-->
+      <!--            登录-->
+      <!--          </el-button>-->
+      <!--        </span>-->
+      <!--      </template>-->
+    </el-dialog>
+
     <el-drawer v-model="userSet" :with-header="false">
       <h5 class="mb-2">用户操作</h5>
       <el-menu
@@ -76,6 +101,11 @@ export default {
       circleUrl: "",
       activeIndex: "1",
       errorCircleUrl: require("../assets/images/avatar.png"),
+      userLogin: false,
+      user: {
+        name: "",
+        password: "",
+      },
       userSet: false,
     };
   },
@@ -84,7 +114,11 @@ export default {
       return true;
     },
     showUserSet() {
-      this.userSet = true;
+      this.userLogin = true;
+      // if (!sessionStorage.getItem("user")) {
+      // } else {
+      // this.userSet = true;
+      // }
     },
   },
 };
