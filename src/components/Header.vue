@@ -47,8 +47,17 @@
       </div>
     </el-menu>
 
-    <el-drawer v-model="userSet" title="I am the title" :with-header="false">
-      <span>Hi there!</span>
+    <el-drawer v-model="userSet" :with-header="false">
+      <h5 class="mb-2">用户操作</h5>
+      <el-menu
+        default-active="userOperationOne"
+        class="el-menu-vertical-demo"
+        style="border-right: none"
+      >
+        <el-menu-item index="userOperationOne">用户操作一</el-menu-item>
+        <el-menu-item index="userOperationTwo">用户操作二</el-menu-item>
+        <el-menu-item index="userOperationThree">用户操作三</el-menu-item>
+      </el-menu>
     </el-drawer>
 
     <div style="flex: 0"></div>
