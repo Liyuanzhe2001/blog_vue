@@ -19,6 +19,7 @@
           padding-left: 30px;
           font-weight: bold;
           color: dodgerblue;
+          cursor: pointer;
         "
       >
         LOGO
@@ -32,7 +33,7 @@
       </el-sub-menu>
       <el-menu-item index="3" disabled>选项三</el-menu-item>
       <el-menu-item index="4">选项四</el-menu-item>
-      <div style="width: 50px; position: absolute; right: 0; line-height: 55px">
+      <div style="width: 50px; position: absolute; right: 0; top: 5px">
         <div class="demo-basic--circle">
           <el-avatar
             @click="showUserSet"
@@ -50,46 +51,77 @@
     <el-dialog v-model="userLogin" title="用户登录" width="400px" center>
       <el-form :model="user" label-width="0px" class="login_form">
         <el-form-item>
-          <el-input v-model="user.name"> </el-input>
+          <el-input
+            style="height: 30px"
+            v-model="user.name"
+            prefix-icon="User"
+            placeholder="请输入账号"
+          />
+          <div style="position: absolute; right: 0">
+            <el-button type="text">注册账号</el-button>
+          </div>
         </el-form-item>
         <el-form-item>
-          <el-input v-model="user.password" type="password"> </el-input>
+          <el-input
+            style="height: 30px"
+            show-password
+            v-model="user.password"
+            prefix-icon="Lock"
+            placeholder="请输入密码"
+          />
+          <div style="position: absolute; right: 0">
+            <el-button type="text">忘记密码</el-button>
+          </div>
         </el-form-item>
-        <el-row justify="end">
+        <el-row justify="end" style="padding-top: 10px">
           <el-form-item class="login_btn">
-            <el-button type="primary">登录</el-button>
-            <el-button type="info">重置</el-button>
+            <el-button type="primary" @click="loginUser">登录</el-button>
+            <el-button type="info" @click="clearUser">重置</el-button>
           </el-form-item>
         </el-row>
       </el-form>
-      <!--      <template #footer>-->
-      <!--        <span class="dialog-footer">-->
-      <!--          <el-button @click="userLogin = false">取消</el-button>-->
-      <!--          <el-button type="primary" @click="userLogin = false">-->
-      <!--            登录-->
-      <!--          </el-button>-->
-      <!--        </span>-->
-      <!--      </template>-->
     </el-dialog>
 
     <el-drawer v-model="userSet" :with-header="false">
-      <h5 class="mb-2">用户操作</h5>
+      <div style="width: 50px; margin-left: 20px">
+        <div class="demo-basic--circle">
+          <el-avatar
+            size="1000"
+            :src="circleUrl"
+            @error="errorHandler"
+            style="cursor: pointer"
+          >
+            <img :src="errorCircleUrl" />
+          </el-avatar>
+        </div>
+      </div>
       <el-menu
-        default-active="userOperationOne"
         class="el-menu-vertical-demo"
-        style="border-right: none"
+        style="border-right: none; height: 80%"
       >
-        <el-menu-item index="userOperationOne">用户操作一</el-menu-item>
-        <el-menu-item index="userOperationTwo">用户操作二</el-menu-item>
-        <el-menu-item index="userOperationThree">用户操作三</el-menu-item>
+        <el-menu-item index="userOperationOne">
+          <el-icon><Message /></el-icon>
+          个人信息
+        </el-menu-item>
+        <el-menu-item index="userOperationTwo">
+          <el-icon><Star /></el-icon>
+          我的收藏
+        </el-menu-item>
+        <el-divider />
+        <el-menu-item index="userOperationThree">
+          <el-icon><CloseBold /></el-icon>
+          退出登录
+        </el-menu-item>
       </el-menu>
     </el-drawer>
-
-    <div style="flex: 0"></div>
   </div>
+
+  <div style="flex: 0"></div>
 </template>
 
 <script>
+import { ElMessage } from "element-plus";
+
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Header",
@@ -114,12 +146,31 @@ export default {
       return true;
     },
     showUserSet() {
-      this.userLogin = true;
       // if (!sessionStorage.getItem("user")) {
+      this.userLogin = true;
       // } else {
-      // this.userSet = true;
+      //   this.userSet = true;
       // }
     },
+    loginUser() {
+      let username = this.user.name;
+      let password = this.user.password;
+      if (username === "123" && password === "123") {
+        sessionStorage.setItem("user", this.user);
+        ElMessage({
+          message: "登录成功",
+          type: "success",
+        });
+        this.circleUrl = require("../assets/images/background.png");
+        this.userLogin = false;
+      } else {
+        ElMessage({
+          message: "账号或密码错误",
+          type: "error",
+        });
+      }
+    },
+    clearUser() {},
   },
 };
 </script>

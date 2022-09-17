@@ -1,9 +1,7 @@
 <template>
   <div :style="fatherStyle">
-    <div>
-      <div :style="mainContent">
-        <b>一二三四五六七八</b>
-      </div>
+    <div :style="mainContent">
+      <b>一二三四五六七八</b>
     </div>
   </div>
 </template>
