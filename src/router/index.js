@@ -3,6 +3,7 @@ import Layout from "../layout/Layout.vue";
 import HomeView from "@/views/HomeView";
 import RegisterView from "@/views/RegisterView";
 import Account from "@/layout/Account";
+import ForgotPasswordView from "@/views/ForgotPasswordView";
 
 const routes = [
   {
@@ -27,6 +28,11 @@ const routes = [
         path: "register",
         name: "register",
         component: RegisterView,
+      },
+      {
+        path: "forgetpwd",
+        name: "forgetpwd",
+        component: ForgotPasswordView,
       },
     ],
   },

@@ -55,7 +55,7 @@
             style="height: 30px"
             v-model="user.name"
             prefix-icon="User"
-            placeholder="请输入账号"
+            placeholder="请输入用户名"
           />
           <div style="position: absolute; right: 0">
             <el-button type="text">注册账号</el-button>
@@ -165,12 +165,15 @@ export default {
         this.userLogin = false;
       } else {
         ElMessage({
-          message: "账号或密码错误",
+          message: "用户名或密码错误",
           type: "error",
         });
       }
     },
-    clearUser() {},
+    clearUser() {
+      this.user.name = "";
+      this.user.password = "";
+    },
   },
 };
 </script>

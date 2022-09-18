@@ -18,15 +18,6 @@
         <el-form-item>
           <el-input
             style="height: 30px"
-            show-password
-            v-model="user.password"
-            prefix-icon="Lock"
-            placeholder="请输入密码"
-          />
-        </el-form-item>
-        <el-form-item>
-          <el-input
-            style="height: 30px"
             v-model="user.phone"
             prefix-icon="Iphone"
             placeholder="请输入电话号码"
@@ -63,7 +54,7 @@
 import { ElMessage } from "element-plus";
 
 export default {
-  name: "RegisterView",
+  name: "ForgotPasswordView",
   data() {
     return {
       fatherStyle: {
@@ -91,6 +82,11 @@ export default {
       if (this.user.phone === "") {
         ElMessage({
           message: "电话号码不能为空",
+          type: "error",
+        });
+      } else if (this.user.phone !== "123") {
+        ElMessage({
+          message: "电话号码错误",
           type: "error",
         });
       } else {
