@@ -6,6 +6,8 @@
       <change beforePath="$PROJECT_DIR$/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/layout/Account.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/Account.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/ForgotPasswordView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ForgotPasswordView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/HomeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/HomeView.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/RegisterView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/RegisterView.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,6 +18,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="package.json" />
         <option value="Vue Single File Component" />
       </list>
     </option>
@@ -65,6 +68,7 @@
       <recent name="C:\project\Java\blog\前端\vue" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\project\Java\blog\vue\src\views" />
       <recent name="C:\project\Java\blog\前端\vue\src\assets\images" />
       <recent name="C:\project\Java\blog\前端\vue\src\assets" />
     </key>
@@ -109,7 +113,9 @@
       <workItem from="1663248138791" duration="1144000" />
       <workItem from="1663286545308" duration="7844000" />
       <workItem from="1663392922985" duration="6291000" />
-      <workItem from="1663483196317" duration="4175000" />
+      <workItem from="1663483196317" duration="4348000" />
+      <workItem from="1663508573870" duration="2690000" />
+      <workItem from="1663664997012" duration="6706000" />
     </task>
     <servers />
   </component>

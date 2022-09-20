@@ -82,7 +82,7 @@ export default {
       disabledBtn: false,
       code: "",
       disabledCode: true,
-      count: 60,
+      count: 59,
     };
   },
   methods: {
@@ -103,7 +103,7 @@ export default {
           if (this.count < 1) {
             this.disabledBtn = false;
             this.codeBtnName = "获取验证码";
-            this.count = 60;
+            this.count = 59;
             clearInterval(timeout);
           } else {
             this.disabledBtn = true;

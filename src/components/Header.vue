@@ -24,15 +24,11 @@
       >
         LOGO
       </div>
-      <el-menu-item index="1">选项一</el-menu-item>
-      <el-sub-menu index="2">
-        <template #title>选项二</template>
-        <el-menu-item index="2-1">选项二_1</el-menu-item>
-        <el-menu-item index="2-2">选项二_2</el-menu-item>
-        <el-menu-item index="2-3">选项二_3</el-menu-item>
-      </el-sub-menu>
-      <el-menu-item index="3" disabled>选项三</el-menu-item>
-      <el-menu-item index="4">选项四</el-menu-item>
+      <el-menu-item index="1">刷题</el-menu-item>
+      <el-menu-item index="2">面经</el-menu-item>
+      <el-menu-item index="3">课程</el-menu-item>
+      <el-menu-item index="4">资料</el-menu-item>
+      <el-menu-item index="5">导航</el-menu-item>
       <div style="width: 50px; position: absolute; right: 0; top: 5px">
         <div class="demo-basic--circle">
           <el-avatar
@@ -58,7 +54,7 @@
             placeholder="请输入用户名"
           />
           <div style="position: absolute; right: 0">
-            <el-button type="text">注册账号</el-button>
+            <el-button type="text" @click="register">注册账号</el-button>
           </div>
         </el-form-item>
         <el-form-item>
@@ -70,7 +66,7 @@
             placeholder="请输入密码"
           />
           <div style="position: absolute; right: 0">
-            <el-button type="text">忘记密码</el-button>
+            <el-button type="text" @click="forgetPwd">忘记密码</el-button>
           </div>
         </el-form-item>
         <el-row justify="end" style="padding-top: 10px">
@@ -131,7 +127,7 @@ export default {
   data() {
     return {
       circleUrl: "",
-      activeIndex: "1",
+      activeIndex: "",
       errorCircleUrl: require("../assets/images/avatar.png"),
       userLogin: false,
       user: {
@@ -147,9 +143,9 @@ export default {
     },
     showUserSet() {
       // if (!sessionStorage.getItem("user")) {
-      this.userLogin = true;
+      // this.userLogin = true;
       // } else {
-      //   this.userSet = true;
+      this.userSet = true;
       // }
     },
     loginUser() {
@@ -173,6 +169,12 @@ export default {
     clearUser() {
       this.user.name = "";
       this.user.password = "";
+    },
+    register() {
+      window.open("./account/register");
+    },
+    forgetPwd() {
+      window.open("./account/forgetpwd");
     },
   },
 };

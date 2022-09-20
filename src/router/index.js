@@ -4,6 +4,8 @@ import HomeView from "@/views/HomeView";
 import RegisterView from "@/views/RegisterView";
 import Account from "@/layout/Account";
 import ForgotPasswordView from "@/views/ForgotPasswordView";
+import OnlineJudge from "@/layout/OnlineJudge";
+import ProblemList from "@/views/oj/ProblemList";
 
 const routes = [
   {
@@ -33,6 +35,18 @@ const routes = [
         path: "forgetpwd",
         name: "forgetpwd",
         component: ForgotPasswordView,
+      },
+    ],
+  },
+  {
+    path: "/oj",
+    name: "OnlineJudge",
+    component: OnlineJudge,
+    children: [
+      {
+        path: "",
+        name: "problemList",
+        component: ProblemList,
       },
     ],
   },

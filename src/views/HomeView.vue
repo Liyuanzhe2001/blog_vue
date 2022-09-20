@@ -17,7 +17,7 @@ export default {
       fatherStyle: {
         width: "100%",
         padding: "10px",
-        height: "520px",
+        minHeight: "520px",
         backgroundImage:
           "url(" + require("../assets/images/background.png") + ")",
         backgroundSize: "cover",

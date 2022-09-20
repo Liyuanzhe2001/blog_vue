@@ -3,7 +3,7 @@
     <el-card class="box-card">
       <template #header>
         <div class="card-header">
-          <span>注册账号</span>
+          <span>忘记密码</span>
         </div>
       </template>
       <el-form :model="user" label-width="0px" class="login_form">
@@ -73,7 +73,7 @@ export default {
       disabledBtn: false,
       code: "",
       disabledCode: true,
-      count: 60,
+      count: 59,
     };
   },
   methods: {
@@ -99,7 +99,7 @@ export default {
           if (this.count < 1) {
             this.disabledBtn = false;
             this.codeBtnName = "获取验证码";
-            this.count = 60;
+            this.count = 59;
             clearInterval(timeout);
           } else {
             this.disabledBtn = true;
