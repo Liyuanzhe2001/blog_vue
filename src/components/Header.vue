@@ -22,7 +22,7 @@
           cursor: pointer;
         "
       >
-        LOGO
+        <img :src="logoImage" style="height: 47px" />
       </div>
       <el-menu-item index="1">刷题</el-menu-item>
       <el-menu-item index="2">面经</el-menu-item>
@@ -126,6 +126,7 @@ export default {
   },
   data() {
     return {
+      logoImage: require("../assets/images/logo.png"),
       circleUrl: "",
       activeIndex: "",
       errorCircleUrl: require("../assets/images/avatar.png"),
