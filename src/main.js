@@ -7,6 +7,7 @@ import "element-plus/dist/index.css";
 import "dayjs/locale/zh-cn";
 import locale from "element-plus/lib/locale/lang/zh-cn";
 import * as ElIconModules from "@element-plus/icons-vue";
+import echarts from "echarts";
 
 import "@/assets/css/global.css";
 import "@/assets/images/background.png";
@@ -19,6 +20,7 @@ app
     locale,
     size: "small",
   })
+  .use(echarts)
   .mount("#app");
 
 //  统一注册el-icon图标

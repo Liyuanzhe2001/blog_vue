@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="width: 1263px">
     <!--    头部-->
     <Header />
     <!--    主体-->

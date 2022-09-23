@@ -5,56 +5,78 @@
       width: 100%;
       padding-top: 20px;
       background-color: #eeeeee;
+      position: relative;
     "
   >
-    <el-table
-      :data="tableData"
-      style="width: 80%; border-radius: 5px; margin: 0 auto; font-size: 1rem"
-    >
-      <el-table-column
-        :formatter="statusFormat"
-        prop="status"
-        label="状态"
-        width="100px"
-      />
-      <el-table-column
-        style="cursor: pointer"
-        @click="openTopic"
-        prop="topic"
-        label="题目"
+    <div class="left">
+      <el-table
+        :data="tableData"
+        stripe
+        style="
+          width: 100%;
+          border-radius: 5px;
+          margin: 0 auto;
+          font-size: 0.9rem;
+        "
       >
-        <template #default="scope">
-          <el-button size="big" link v-text="scope.row['topic']" />
-        </template>
-      </el-table-column>
-      <el-table-column prop="answer" label="题解" />
-      <el-table-column prop="passingRate" label="通过率" />
-      <el-table-column
-        prop="difficulty"
-        label="难度"
-        :formatter="difficultyFormat"
-      />
-    </el-table>
-    <div
-      style="
-        height: 20px;
-        display: block;
-        margin-top: 20px;
-        position: absolute;
-        right: 10vw;
-      "
-    >
-      <el-pagination
-        :page-size="20"
-        :pager-count="11"
-        layout="prev, pager, next"
-        :total="1000"
-      />
+        <el-table-column
+          :formatter="statusFormat"
+          prop="status"
+          label="状态"
+          width="100px"
+        />
+        <el-table-column
+          style="cursor: pointer"
+          @click="openTopic"
+          prop="topic"
+          label="题目"
+        >
+          <template #default="scope">
+            <el-button size="big" link v-text="scope.row['topic']" />
+          </template>
+        </el-table-column>
+        <el-table-column prop="answer" label="题解" />
+        <el-table-column prop="passingRate" label="通过率" />
+        <el-table-column
+          prop="difficulty"
+          label="难度"
+          :formatter="difficultyFormat"
+        />
+      </el-table>
+      <div
+        style="
+          height: 20px;
+          display: block;
+          margin-top: 20px;
+          position: absolute;
+          right: 0;
+        "
+      >
+        <el-pagination
+          v-model:current-page="page.currentPage"
+          :page-size="page.pageSize"
+          :pager-count="page.pageCount"
+          :current-page="page.currentPage"
+          layout="prev, pager, next"
+          :total="page.total"
+        />
+      </div>
+    </div>
+    <div class="right">
+      <el-card class="box-card">
+        <h3>已签到：{{ signInDays }}天</h3>
+      </el-card>
+      <div class="center"></div>
+      <el-card class="box-card" style="width: 100%; height: 70%">
+        <div id="pie" style="width: 100%; height: 300px"></div>
+      </el-card>
     </div>
   </div>
 </template>
 
 <script>
+import * as echarts from "echarts";
+
 export default {
   name: "ProblemList",
   data() {
@@ -145,7 +167,23 @@ export default {
           difficulty: "2",
         },
       ],
+      page: {
+        currentPage: 1,
+        pageSize: 12,
+        pageCount: 7,
+        total: 1000,
+      },
+      signInDays: 1,
+      problems: {
+        easy: 30,
+        mid: 20,
+        diff: 10,
+        other: 100,
+      },
     };
+  },
+  mounted() {
+    this.drawCart();
   },
   methods: {
     openTopic() {},
@@ -161,8 +199,69 @@ export default {
       else if (row.difficulty === "1") return "中等";
       else return "困难";
     },
+    drawCart() {
+      let myChart = echarts.init(document.getElementById("pie"));
+      let option = {
+        tooltip: {
+          trigger: "item",
+        },
+        color: ["#4eac9b", "#f4bb40", "#ea445a", "#dfdfdf"],
+        legend: {
+          top: "5%",
+          left: "center",
+        },
+        series: [
+          {
+            type: "pie",
+            radius: ["40%", "70%"],
+            avoidLabelOverlap: false,
+            itemStyle: {
+              borderRadius: 10,
+              borderColor: "#fff",
+              borderWidth: 2,
+            },
+            label: {
+              show: false,
+              position: "center",
+            },
+            emphasis: {
+              label: {
+                show: true,
+                fontSize: "20",
+                fontWeight: "bold",
+              },
+            },
+            labelLine: {
+              show: false,
+            },
+            data: [
+              { value: 20, name: "简单" },
+              { value: 10, name: "中等" },
+              { value: 5, name: "困难" },
+              { value: 100, name: "未完成" },
+            ],
+          },
+        ],
+      };
+      myChart.setOption(option);
+    },
   },
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.left {
+  width: 60%;
+  position: absolute;
+  left: 40px;
+}
+.right {
+  width: 30%;
+  position: absolute;
+  right: 40px;
+  height: 80%;
+}
+.right .center {
+  height: 4%;
+}
+</style>
