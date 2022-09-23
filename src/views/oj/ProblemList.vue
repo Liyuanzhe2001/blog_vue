@@ -6,6 +6,7 @@
       padding-top: 20px;
       background-color: #eeeeee;
       position: relative;
+      min-width: 1263px;
     "
   >
     <div class="left">

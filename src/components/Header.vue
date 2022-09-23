@@ -5,6 +5,7 @@
       line-height: 50px;
       border-bottom: 1px solid #ccc;
       display: flex;
+      min-width: 1263px;
     "
   >
     <el-menu
@@ -126,10 +127,10 @@ export default {
   },
   data() {
     return {
-      logoImage: require("../assets/images/logo.png"),
+      logoImage: require("@/assets/images/logo.png"),
       circleUrl: "",
       activeIndex: "",
-      errorCircleUrl: require("../assets/images/avatar.png"),
+      errorCircleUrl: require("@/assets/images/avatar.png"),
       userLogin: false,
       user: {
         name: "",
@@ -158,7 +159,7 @@ export default {
           message: "登录成功",
           type: "success",
         });
-        this.circleUrl = require("../assets/images/background.png");
+        this.circleUrl = require("@/assets/images/background.png");
         this.userLogin = false;
       } else {
         ElMessage({

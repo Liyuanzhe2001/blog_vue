@@ -1,5 +1,5 @@
 <template>
-  <div style="width: 100%; height: 46px">
+  <div style="width: 100%; height: 46px; min-width: 1239px">
     <p style="text-align: center">底部内容</p>
   </div>
 </template>

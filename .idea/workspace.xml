@@ -3,7 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="47c69d8a-441d-4395-9f22-5d90be1c4a44" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Aside.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/Layout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/Layout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/OnlineJudge.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/OnlineJudge.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/HomeView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/HomeView.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/oj/ProblemList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/oj/ProblemList.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +131,7 @@
       <workItem from="1663924427044" duration="18000" />
       <workItem from="1663924850357" duration="13000" />
       <workItem from="1663931524569" duration="3729000" />
-      <workItem from="1663935527876" duration="156000" />
+      <workItem from="1663935527876" duration="2045000" />
     </task>
     <servers />
   </component>

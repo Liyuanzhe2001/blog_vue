@@ -1,11 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Layout from "../layout/Layout.vue";
+import Layout from "@/layout/Layout.vue";
 import HomeView from "@/views/HomeView";
 import RegisterView from "@/views/RegisterView";
 import Account from "@/layout/Account";
 import ForgotPasswordView from "@/views/ForgotPasswordView";
 import OnlineJudge from "@/layout/OnlineJudge";
 import ProblemList from "@/views/oj/ProblemList";
+import Problem from "@/views/oj/Problem";
 
 const routes = [
   {
@@ -47,6 +48,11 @@ const routes = [
         path: "",
         name: "problemList",
         component: ProblemList,
+      },
+      {
+        path: ":id",
+        name: "problem",
+        component: Problem,
       },
     ],
   },

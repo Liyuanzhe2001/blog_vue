@@ -22,6 +22,7 @@ export default {
           "url(" + require("../assets/images/background.png") + ")",
         backgroundSize: "cover",
         position: "relative",
+        minWidth: "1263px",
       },
       mainContent: {
         width: "10em",
