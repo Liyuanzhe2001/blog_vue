@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="47c69d8a-441d-4395-9f22-5d90be1c4a44" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/oj/Problem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/oj/Problem.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +63,7 @@
       <recent name="C:\project\Java\blog\前端\vue" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\project\Java\blog\vue\src\components\class" />
       <recent name="C:\project\Java\blog\vue\src\assets\images" />
       <recent name="C:\project\Java\blog\vue\src\views" />
       <recent name="C:\project\Java\blog\前端\vue\src\assets\images" />
@@ -126,7 +127,7 @@
       <workItem from="1663931524569" duration="3729000" />
       <workItem from="1663935527876" duration="2161000" />
       <workItem from="1663949231651" duration="3485000" />
-      <workItem from="1664032698623" duration="3102000" />
+      <workItem from="1664032698623" duration="4831000" />
     </task>
     <servers />
   </component>

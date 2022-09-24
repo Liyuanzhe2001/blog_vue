@@ -7,6 +7,10 @@ import ForgotPasswordView from "@/views/ForgotPasswordView";
 import OnlineJudge from "@/layout/OnlineJudge";
 import ProblemList from "@/views/oj/ProblemList";
 import Problem from "@/views/oj/Problem";
+import Classes from "@/layout/Classes";
+import ClassJavaList from "@/views/class/ClassJavaList";
+import ClassPythonList from "@/views/class/ClassPythonList";
+import ClassBigDataList from "@/views/class/ClassBigDataList";
 
 const routes = [
   {
@@ -53,6 +57,29 @@ const routes = [
         path: ":id",
         name: "problem",
         component: Problem,
+      },
+    ],
+  },
+  {
+    path: "/classes",
+    name: "Classes",
+    component: Classes,
+    redirect: "/classes/java",
+    children: [
+      {
+        path: "java",
+        name: "ClassJavaList",
+        component: ClassJavaList,
+      },
+      {
+        path: "python",
+        name: "ClassPythonList",
+        component: ClassPythonList,
+      },
+      {
+        path: "bigdata",
+        name: "ClassBigDataList",
+        component: ClassBigDataList,
       },
     ],
   },
