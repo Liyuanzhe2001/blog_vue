@@ -1,5 +1,5 @@
 <template>
-  <div>大数据列表</div>
+  <div style="min-height: 320px">大数据列表</div>
 </template>
 
 <script>

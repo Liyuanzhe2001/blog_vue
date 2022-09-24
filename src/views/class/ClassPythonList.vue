@@ -1,5 +1,5 @@
 <template>
-  <div>Python列表</div>
+  <div style="min-height: 320px">Python列表</div>
 </template>
 
 <script>
