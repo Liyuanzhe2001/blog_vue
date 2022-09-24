@@ -10,7 +10,7 @@
     "
   >
     <div class="left">
-      <el-scrollbar max-height="520px">
+      <el-scrollbar max-height="496px">
         <div class="title">
           {{ problem.id }}.&nbsp;&nbsp;{{ problem.title }}
         </div>
@@ -42,7 +42,37 @@
       </el-scrollbar>
     </div>
     <div class="center"></div>
-    <div class="right"></div>
+    <div class="right">
+      <el-scrollbar max-height="496px">
+        <div class="select">
+          <el-select
+            v-model="value"
+            :placeholder="options[0].value"
+            class="m-2"
+            size="default"
+          >
+            <el-option
+              v-for="item in options"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value"
+            />
+          </el-select>
+        </div>
+        <div class="area">
+          <el-input
+            class="context"
+            v-model="textarea"
+            :rows="18"
+            type="textarea"
+            resize="none"
+          />
+        </div>
+        <div class="btn">
+          <el-button type="primary" size="big">提交</el-button>
+        </div>
+      </el-scrollbar>
+    </div>
   </div>
 </template>
 
@@ -83,6 +113,37 @@ export default {
           },
         ],
       },
+      value: "",
+      options: [
+        {
+          value: "C++",
+          label: "C++",
+        },
+        {
+          value: "Java",
+          label: "Java",
+        },
+        {
+          value: "Python",
+          label: "Python",
+        },
+        {
+          value: "Python3",
+          label: "Python3",
+        },
+        {
+          value: "C",
+          label: "C",
+        },
+        {
+          value: "C#",
+          label: "C#",
+        },
+        {
+          value: "JavaScript",
+          label: "JavaScript",
+        },
+      ],
       reply: {
         language: "Java",
         answer:
@@ -90,6 +151,7 @@ export default {
               return a+b;\
            }",
       },
+      textarea: "",
     };
   },
 };
@@ -133,5 +195,20 @@ export default {
   height: 98%;
   border-radius: 5px;
   background-color: white;
+}
+.right .select {
+  width: 100px;
+  margin: 20px;
+}
+.right .area {
+  width: 577px;
+  margin: 0 20px;
+}
+.right .area .context {
+  font-size: 13px;
+}
+.right .btn {
+  margin: 6px 20px;
+  float: right;
 }
 </style>
