@@ -11,6 +11,8 @@ import Classes from "@/layout/Classes";
 import ClassJavaList from "@/views/class/ClassJavaList";
 import ClassPythonList from "@/views/class/ClassPythonList";
 import ClassBigDataList from "@/views/class/ClassBigDataList";
+import Interview from "@/layout/Interview";
+import InterviewList from "@/views/interview/InterviewList";
 
 const routes = [
   {
@@ -80,6 +82,18 @@ const routes = [
         path: "bigdata",
         name: "ClassBigDataList",
         component: ClassBigDataList,
+      },
+    ],
+  },
+  {
+    path: "/interview",
+    name: "Interview",
+    component: Interview,
+    children: [
+      {
+        path: "",
+        name: "InterviewList",
+        component: InterviewList,
       },
     ],
   },

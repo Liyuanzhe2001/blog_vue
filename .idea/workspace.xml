@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="47c69d8a-441d-4395-9f22-5d90be1c4a44" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/class/ClassHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/class/ClassHeader.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/class/ClassBigDataList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/class/ClassBigDataList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/class/ClassJavaList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/class/ClassJavaList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/class/ClassPythonList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/class/ClassPythonList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +129,8 @@
       <workItem from="1663935527876" duration="2161000" />
       <workItem from="1663949231651" duration="3485000" />
       <workItem from="1664032698623" duration="6413000" />
-      <workItem from="1664092871619" duration="5142000" />
+      <workItem from="1664092871619" duration="5555000" />
+      <workItem from="1664120333641" duration="3207000" />
     </task>
     <servers />
   </component>
