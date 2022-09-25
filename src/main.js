@@ -10,6 +10,8 @@ import * as ElIconModules from "@element-plus/icons-vue";
 import echarts from "echarts";
 
 import "@/assets/css/global.css";
+import "@/assets/css/num.css";
+import "@/assets/css/font.css";
 import "@/assets/images/background.png";
 
 const app = createApp(App);

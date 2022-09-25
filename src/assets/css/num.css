@@ -1,0 +1,14 @@
+.circular {
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 13px;
+    line-height: 30px;
+    background-color: deepskyblue;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin-right: 13px;
+    float: left;
+}

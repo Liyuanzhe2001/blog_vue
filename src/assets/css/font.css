@@ -1,0 +1,8 @@
+.circular_font {
+    display: inline-block;
+    height: 30px;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: bold;
+    color: deepskyblue;
+}

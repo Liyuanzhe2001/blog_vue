@@ -1,6 +1,21 @@
 <template>
   <div :style="headerStyle">
-    <div :style="mainStyle">头部</div>
+    <div :style="mainStyle">
+      <div class="title">
+        <span>课程</span>
+      </div>
+      <div>
+        <el-radio-group
+          v-model="language"
+          :size="30"
+          style="margin-bottom: 30px"
+        >
+          <el-radio-button label="java">Java</el-radio-button>
+          <el-radio-button label="python">Python</el-radio-button>
+          <el-radio-button label="bigdata">BigData</el-radio-button>
+        </el-radio-group>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -8,10 +23,13 @@
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "ClassHeader",
+  created() {
+    console.log(this.language);
+  },
   data() {
     return {
       headerStyle: {
-        midWidth: "1263px",
+        minWidth: "1263px",
         height: "200px",
         backgroundImage:
           "url(" + require("@/assets/images/classheader.jpeg") + ")",
@@ -21,17 +39,24 @@ export default {
         width: "600px",
         height: "30px",
         position: "absolute",
-        top: "60px",
+        top: "-50px",
         left: "0",
         bottom: "0",
         right: "0",
         margin: "auto",
         textAlign: "center",
-        backgroundColor: "white",
       },
+      language: this.$route.path.split("/")[2],
     };
   },
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.title {
+  font-size: 20px;
+  color: white;
+  padding-bottom: 20px;
+  font-weight: bold;
+}
+</style>
