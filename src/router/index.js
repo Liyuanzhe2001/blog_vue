@@ -13,6 +13,8 @@ import ClassPythonList from "@/views/class/ClassPythonList";
 import ClassBigDataList from "@/views/class/ClassBigDataList";
 import Interview from "@/layout/Interview";
 import InterviewList from "@/views/interview/InterviewList";
+import Article from "@/layout/Article";
+import ArticleList from "@/views/article/ArticleList";
 
 const routes = [
   {
@@ -94,6 +96,18 @@ const routes = [
         path: "",
         name: "InterviewList",
         component: InterviewList,
+      },
+    ],
+  },
+  {
+    path: "/article",
+    name: "Article",
+    component: Article,
+    children: [
+      {
+        path: "",
+        name: "ArticleList",
+        component: ArticleList,
       },
     ],
   },
