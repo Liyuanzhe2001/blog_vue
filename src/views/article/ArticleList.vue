@@ -15,17 +15,49 @@
     <div class="left">
       <div class="title">热榜</div>
       <ol class="top10">
-        <li v-for="article in top10" :key="article">
+        <li class="list" v-for="article in top10" :key="article">
           {{ article.title }}
         </li>
       </ol>
     </div>
     <div class="right">
-      <el-card v-for="mainContent in mainContents" :key="mainContent">
-        <div @click="jump(mainContent.id)">
+      <el-card
+        style="border-radius: 5px"
+        v-for="mainContent in mainContents"
+        :key="mainContent"
+      >
+        <div class="title" @click="jump(mainContent.id)">
           {{ mainContent.title }}
         </div>
+        <div class="content">
+          {{ mainContent.content }}
+        </div>
+        <div class="author">
+          <el-icon><User /></el-icon>
+          {{ mainContent.author }}
+        </div>
+        <div class="collect">
+          <el-icon><Star /></el-icon>
+          {{ mainContent.collect }}
+        </div>
+        <div class="label">
+          <el-space wrap>
+            <el-tag :size="30" v-for="label in mainContent.labels" :key="label">
+              {{ label }}
+            </el-tag>
+          </el-space>
+        </div>
       </el-card>
+    </div>
+    <div class="bottom">
+      <el-pagination
+        v-model:current-page="page.currentPage"
+        :page-size="page.pageSize"
+        :pager-count="page.pageCount"
+        :current-page="page.currentPage"
+        layout="prev, pager, next"
+        :total="page.total"
+      />
     </div>
   </div>
 </template>
@@ -86,7 +118,7 @@ export default {
             "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
           author: "liyuanzhe",
           collect: 100,
-          label: "Java",
+          labels: ["Java"],
         },
         {
           id: 2,
@@ -96,7 +128,7 @@ export default {
             "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
           author: "liyuanzhe",
           collect: 100,
-          label: "Java",
+          labels: ["Java", "SpringBoot"],
         },
         {
           id: 3,
@@ -106,7 +138,7 @@ export default {
             "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
           author: "liyuanzhe",
           collect: 100,
-          label: "Java",
+          labels: ["Python", "flask"],
         },
         {
           id: 4,
@@ -116,7 +148,7 @@ export default {
             "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
           author: "liyuanzhe",
           collect: 100,
-          label: "Java",
+          labels: ["Go", "Gin"],
         },
         {
           id: 5,
@@ -126,7 +158,7 @@ export default {
             "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
           author: "liyuanzhe",
           collect: 100,
-          label: "Java",
+          labels: ["Java"],
         },
         {
           id: 6,
@@ -136,7 +168,7 @@ export default {
             "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
           author: "liyuanzhe",
           collect: 100,
-          label: "Java",
+          labels: ["Java"],
         },
         {
           id: 7,
@@ -146,7 +178,7 @@ export default {
             "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
           author: "liyuanzhe",
           collect: 100,
-          label: "Java",
+          labels: ["Java"],
         },
         {
           id: 8,
@@ -156,7 +188,7 @@ export default {
             "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
           author: "liyuanzhe",
           collect: 100,
-          label: "Java",
+          labels: ["Java"],
         },
         {
           id: 9,
@@ -166,7 +198,7 @@ export default {
             "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
           author: "liyuanzhe",
           collect: 100,
-          label: "Java",
+          labels: ["Java"],
         },
         {
           id: 10,
@@ -176,9 +208,15 @@ export default {
             "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
           author: "liyuanzhe",
           collect: 100,
-          label: "Java",
+          labels: ["Java"],
         },
       ],
+      page: {
+        currentPage: 1,
+        pageSize: 12,
+        pageCount: 7,
+        total: 1000,
+      },
     };
   },
   methods: {
@@ -205,13 +243,20 @@ export default {
 
 .left .title {
   margin-left: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   font-size: 1.2rem;
 }
 
 .left .top10 {
   margin-left: 28px;
   line-height: 28px;
+}
+.left .top10 .list {
+  cursor: pointer;
+}
+.left .top10 .list:hover {
+  color: deepskyblue;
+  text-decoration: underline;
 }
 
 .right {
@@ -220,7 +265,37 @@ export default {
   width: 73%;
   margin-right: 30px;
   height: 93%;
-  background-color: white;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.right .title {
+  cursor: pointer;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+.right .content {
+  color: dimgray;
+  font-size: 0.92rem;
+  margin-bottom: 8px;
+}
+.right .author {
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 20px;
+  margin-bottom: 8px;
+}
+.right .author:hover {
+  text-decoration: underline;
+}
+.right .collect {
+  margin-bottom: 8px;
+}
+.bottom {
+  float: right;
+  width: 73%;
+  margin-right: 30px;
+  height: 50px;
   border-radius: 5px;
   margin-bottom: 20px;
 }

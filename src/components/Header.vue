@@ -112,7 +112,7 @@
       </el-menu>
     </el-drawer>
   </div>
-
+  <el-backtop :right="100" :bottom="100" />
   <div style="flex: 0"></div>
 </template>
 
