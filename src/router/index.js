@@ -15,6 +15,8 @@ import Interview from "@/layout/Interview";
 import InterviewList from "@/views/interview/InterviewList";
 import Article from "@/layout/Article";
 import ArticleList from "@/views/article/ArticleList";
+import Information from "@/views/personal/Information";
+import Personal from "@/layout/Personal";
 
 const routes = [
   {
@@ -108,6 +110,19 @@ const routes = [
         path: "",
         name: "ArticleList",
         component: ArticleList,
+      },
+    ],
+  },
+  {
+    path: "/personal",
+    name: "Personal",
+    component: Personal,
+    redirect: "/personal/information",
+    children: [
+      {
+        path: "information",
+        name: "Information",
+        component: Information,
       },
     ],
   },

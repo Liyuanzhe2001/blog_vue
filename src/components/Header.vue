@@ -13,6 +13,7 @@
       class="el-menu-demo"
       mode="horizontal"
       style="width: 100%"
+      @select="handleSelect"
     >
       <div
         style="
@@ -23,13 +24,13 @@
           cursor: pointer;
         "
       >
-        <img :src="logoImage" style="height: 47px" />
+        <img @click="backHome" :src="logoImage" style="height: 47px" />
       </div>
-      <el-menu-item index="1">刷题</el-menu-item>
-      <el-menu-item index="2">面经</el-menu-item>
-      <el-menu-item index="3">课程</el-menu-item>
-      <el-menu-item index="4">资料</el-menu-item>
-      <el-menu-item index="5">导航</el-menu-item>
+      <el-menu-item index="/oj">刷题</el-menu-item>
+      <el-menu-item index="/interview">面经</el-menu-item>
+      <el-menu-item index="/classes">课程</el-menu-item>
+      <el-menu-item index="/article">专栏</el-menu-item>
+      <el-menu-item index="/">导航</el-menu-item>
       <div style="width: 50px; position: absolute; right: 0; top: 5px">
         <div class="demo-basic--circle">
           <el-avatar
@@ -96,17 +97,23 @@
         class="el-menu-vertical-demo"
         style="border-right: none; height: 80%"
       >
-        <el-menu-item index="userOperationOne">
-          <el-icon><Message /></el-icon>
+        <el-menu-item index="userOperationOne" @click="personalInformation">
+          <el-icon>
+            <Message />
+          </el-icon>
           个人信息
         </el-menu-item>
         <el-menu-item index="userOperationTwo">
-          <el-icon><Star /></el-icon>
+          <el-icon>
+            <Star />
+          </el-icon>
           我的收藏
         </el-menu-item>
         <el-divider />
         <el-menu-item index="userOperationThree">
-          <el-icon><CloseBold /></el-icon>
+          <el-icon>
+            <CloseBold />
+          </el-icon>
           退出登录
         </el-menu-item>
       </el-menu>
@@ -124,11 +131,21 @@ export default {
   name: "Header",
   created() {
     this.circleUrl = "";
+    this.activeIndex = this.$route.matched[0].path;
   },
   data() {
     return {
       logoImage: require("@/assets/images/logo.png"),
       circleUrl: "",
+      srcList: [
+        "https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg",
+        "https://fuss10.elemecdn.com/1/34/19aa98b1fcb2781c4fba33d850549jpeg.jpeg",
+        "https://fuss10.elemecdn.com/0/6f/e35ff375812e6b0020b6b4e8f9583jpeg.jpeg",
+        "https://fuss10.elemecdn.com/9/bb/e27858e973f5d7d3904835f46abbdjpeg.jpeg",
+        "https://fuss10.elemecdn.com/d/e6/c4d93a3805b3ce3f323f7974e6f78jpeg.jpeg",
+        "https://fuss10.elemecdn.com/3/28/bbf893f792f03a54408b3b7a7ebf0jpeg.jpeg",
+        "https://fuss10.elemecdn.com/2/11/6535bcfb26e4c79b48ddde44f4b6fjpeg.jpeg",
+      ],
       activeIndex: "",
       errorCircleUrl: require("@/assets/images/avatar.png"),
       userLogin: false,
@@ -140,6 +157,9 @@ export default {
     };
   },
   methods: {
+    backHome() {
+      window.location.href = "/";
+    },
     errorHandler() {
       return true;
     },
@@ -149,6 +169,9 @@ export default {
       // } else {
       this.userSet = true;
       // }
+    },
+    handleSelect(index) {
+      window.location.href = index;
     },
     loginUser() {
       let username = this.user.name;
@@ -173,10 +196,13 @@ export default {
       this.user.password = "";
     },
     register() {
-      window.open("./account/register");
+      window.open("/account/register");
     },
     forgetPwd() {
-      window.open("./account/forgetpwd");
+      window.open("/account/forgetpwd");
+    },
+    personalInformation() {
+      console.log("个人信息");
     },
   },
 };

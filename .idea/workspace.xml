@@ -4,7 +4,7 @@
     <list default="true" id="47c69d8a-441d-4395-9f22-5d90be1c4a44" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/article/ArticleList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/article/ArticleList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +141,9 @@
       <workItem from="1664294783579" duration="4015000" />
       <workItem from="1664331756355" duration="19000" />
       <workItem from="1664346220325" duration="85000" />
-      <workItem from="1664379536503" duration="2283000" />
+      <workItem from="1664379536503" duration="2524000" />
+      <workItem from="1664411366977" duration="26000" />
+      <workItem from="1664499268472" duration="3833000" />
     </task>
     <servers />
   </component>
