@@ -1,7 +1,7 @@
 <template>
   <div :style="fatherStyle">
     <div :style="mainContent">
-      <b>一二三四五六七八</b>
+      <b>Welcome to LiStudy</b>
     </div>
   </div>
 </template>
@@ -25,7 +25,6 @@ export default {
         minWidth: "1263px",
       },
       mainContent: {
-        width: "10em",
         height: "30px",
         position: "absolute",
         top: "0",

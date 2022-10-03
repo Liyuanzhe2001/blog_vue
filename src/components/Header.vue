@@ -30,7 +30,7 @@
       <el-menu-item index="/interview">面经</el-menu-item>
       <el-menu-item index="/classes">课程</el-menu-item>
       <el-menu-item index="/article">专栏</el-menu-item>
-      <el-menu-item index="/">导航</el-menu-item>
+      <el-menu-item index="/navigation">导航</el-menu-item>
       <div style="width: 50px; position: absolute; right: 0; top: 5px">
         <div class="demo-basic--circle">
           <el-avatar
@@ -84,12 +84,13 @@
       <div style="width: 50px; margin-left: 20px">
         <div class="demo-basic--circle">
           <el-avatar
-            size="1000"
+            :size="80"
             :src="circleUrl"
             @error="errorHandler"
+            @click="changeAvatar"
             style="cursor: pointer"
           >
-            <img :src="errorCircleUrl" />
+            <img :src="circleUrl" height="200px" />
           </el-avatar>
         </div>
       </div>
@@ -118,6 +119,10 @@
         </el-menu-item>
       </el-menu>
     </el-drawer>
+
+    <el-dialog v-model="showAvatar" width="400px" center>
+      <el-image :src="circleUrl" />
+    </el-dialog>
   </div>
   <el-backtop :right="100" :bottom="100" />
   <div style="flex: 0"></div>
@@ -154,6 +159,7 @@ export default {
         password: "",
       },
       userSet: false,
+      showAvatar: false,
     };
   },
   methods: {
@@ -200,6 +206,9 @@ export default {
     },
     forgetPwd() {
       window.open("/account/forgetpwd");
+    },
+    changeAvatar() {
+      this.showAvatar = true;
     },
     personalInformation() {
       console.log("个人信息");
