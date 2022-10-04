@@ -17,6 +17,7 @@ import Article from "@/layout/Article";
 import ArticleList from "@/views/article/ArticleList";
 import Navigation from "@/layout/Navigation";
 import NavigationList from "@/views/navigation/NavigationList";
+import ArticleContent from "@/views/article/ArticleContent";
 
 const routes = [
   {
@@ -110,6 +111,11 @@ const routes = [
         path: "",
         name: "ArticleList",
         component: ArticleList,
+      },
+      {
+        path: ":id",
+        name: "ArticleContent",
+        component: ArticleContent,
       },
     ],
   },

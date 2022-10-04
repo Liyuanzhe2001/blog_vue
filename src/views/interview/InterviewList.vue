@@ -34,8 +34,16 @@
           label="难度"
           :formatter="difficultyFormat"
         />
-        <el-table-column label="操作" width="120">
+        <el-table-column label="操作" width="200">
           <template #default="scope">
+            <el-button
+              link
+              type="primary"
+              size="small"
+              @click="getContent(scope.row['content'])"
+            >
+              查看内容
+            </el-button>
             <el-button
               link
               type="primary"
@@ -75,6 +83,17 @@
         <div id="pie" style="width: 100%; height: 300px"></div>
       </el-card>
     </div>
+    <el-dialog v-model="contentShow" title="题目内容">
+      <span v-text="mainContent"></span>
+      <template #footer>
+        <span class="dialog-footer">
+          <el-button @click="contentShow = false">未背</el-button>
+          <el-button type="primary" @click="contentShow = false"
+            >已背</el-button
+          >
+        </span>
+      </template>
+    </el-dialog>
     <el-dialog v-model="answerShow" title="答案">
       <span v-text="mainAnswer"></span>
       <template #footer>
@@ -98,6 +117,8 @@ export default {
         {
           status: "1",
           topic: "题目一",
+          content:
+            "题目一的内容xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
           answer: "答案一",
           hot: "112233",
           difficulty: "2",
@@ -105,6 +126,8 @@ export default {
         {
           status: "1",
           topic: "题目二",
+          content:
+            "题目二的内容xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
           answer: "答案二",
           hot: "112233",
           difficulty: "2",
@@ -112,6 +135,8 @@ export default {
         {
           status: "0",
           topic: "题目三",
+          content:
+            "题目三的内容xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
           answer: "答案三",
           hot: "112233",
           difficulty: "2",
@@ -119,6 +144,8 @@ export default {
         {
           status: "1",
           topic: "题目四",
+          content:
+            "题目四的内容xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
           answer: "答案四",
           hot: "112233",
           difficulty: "2",
@@ -126,13 +153,17 @@ export default {
         {
           status: "0",
           topic: "题目五",
-          answer: "答案二",
+          content:
+            "题目五的内容xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+          answer: "答案五",
           hot: "112233",
           difficulty: "2",
         },
         {
           status: "1",
           topic: "题目六",
+          content:
+            "题目六的内容xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
           answer: "答案六",
           hot: "112233",
           difficulty: "2",
@@ -140,6 +171,8 @@ export default {
         {
           status: "0",
           topic: "题目七",
+          content:
+            "题目七的内容xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
           answer: "答案七",
           hot: "112233",
           difficulty: "2",
@@ -147,6 +180,8 @@ export default {
         {
           status: "0",
           topic: "题目八",
+          content:
+            "题目八的内容xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
           answer: "答案八",
           hot: "112233",
           difficulty: "2",
@@ -154,6 +189,8 @@ export default {
         {
           status: "0",
           topic: "题目九",
+          content:
+            "题目九的内容xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
           answer: "答案九",
           hot: "112233",
           difficulty: "0",
@@ -161,6 +198,8 @@ export default {
         {
           status: "1",
           topic: "题目十",
+          content:
+            "题目十的内容xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
           answer: "答案十",
           hot: "112233",
           difficulty: "1",
@@ -168,6 +207,8 @@ export default {
         {
           status: "0",
           topic: "题目十一",
+          content:
+            "题目十一的内容xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
           answer: "答案十一",
           hot: "112233",
           difficulty: "2",
@@ -175,6 +216,8 @@ export default {
         {
           status: "1",
           topic: "题目十二",
+          content:
+            "题目十二的内容xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
           answer: "答案十二",
           hot: "112233",
           difficulty: "2",
@@ -187,6 +230,8 @@ export default {
         total: 1000,
       },
       signInDays: 1,
+      contentShow: false,
+      mainContent: "",
       answerShow: false,
       mainAnswer: "",
     };
@@ -207,7 +252,10 @@ export default {
       else if (row.difficulty === "1") return "中等";
       else return "困难";
     },
-    // eslint-disable-next-line no-unused-vars
+    getContent(content) {
+      this.mainContent = content;
+      this.contentShow = true;
+    },
     getAnswer(answer) {
       this.mainAnswer = answer;
       this.answerShow = true;

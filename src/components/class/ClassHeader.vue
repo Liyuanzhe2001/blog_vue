@@ -10,9 +10,15 @@
           :size="30"
           style="margin-bottom: 30px"
         >
-          <el-radio-button label="java">Java</el-radio-button>
-          <el-radio-button label="python">Python</el-radio-button>
-          <el-radio-button label="bigdata">BigData</el-radio-button>
+          <el-radio-button label="java" @click="jump('java')"
+            >Java</el-radio-button
+          >
+          <el-radio-button label="python" @click="jump('python')"
+            >Python</el-radio-button
+          >
+          <el-radio-button label="bigdata" @click="jump('bigdata')"
+            >BigData</el-radio-button
+          >
         </el-radio-group>
       </div>
     </div>
@@ -48,6 +54,12 @@ export default {
       },
       language: this.$route.path.split("/")[2],
     };
+  },
+  methods: {
+    jump(target) {
+      if (target === this.language) return;
+      else window.location.href = target;
+    },
   },
 };
 </script>

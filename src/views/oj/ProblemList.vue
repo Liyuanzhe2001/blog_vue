@@ -26,14 +26,14 @@
           label="状态"
           width="100px"
         />
-        <el-table-column
-          style="cursor: pointer"
-          @click="openTopic"
-          prop="topic"
-          label="题目"
-        >
+        <el-table-column style="cursor: pointer" prop="topic" label="题目">
           <template #default="scope">
-            <el-button size="big" link v-text="scope.row['topic']" />
+            <el-button
+              size="big"
+              link
+              v-text="scope.row['topic']"
+              @click="openTopic(scope.row['id'])"
+            />
           </template>
         </el-table-column>
         <el-table-column prop="answer" label="题解" />
@@ -84,6 +84,7 @@ export default {
     return {
       tableData: [
         {
+          id: "1",
           status: "1",
           topic: "题目内容一",
           answer: "1234",
@@ -91,81 +92,92 @@ export default {
           difficulty: "0",
         },
         {
+          id: "2",
+          status: "2",
+          topic: "题目内容二",
+          answer: "1234",
+          passingRate: "30%",
+          difficulty: "2",
+        },
+        {
+          id: "3",
           status: "1",
-          topic: "题目内容一",
+          topic: "题目内容三",
+          answer: "123",
+          passingRate: "24%",
+          difficulty: "1",
+        },
+        {
+          id: "4",
+          status: "1",
+          topic: "题目内容四",
+          answer: "1139",
+          passingRate: "24%",
+          difficulty: "1",
+        },
+        {
+          id: "5",
+          status: "2",
+          topic: "题目内容五",
+          answer: "1234",
+          passingRate: "20%",
+          difficulty: "2",
+        },
+        {
+          id: "6",
+          status: "1",
+          topic: "题目内容六",
           answer: "1234",
           passingRate: "20%",
           difficulty: "1",
         },
         {
-          status: "1",
-          topic: "题目内容一",
+          id: "7",
+          status: "2",
+          topic: "题目内容七",
           answer: "1234",
           passingRate: "20%",
-          difficulty: "2",
+          difficulty: "0",
         },
         {
+          id: "8",
           status: "1",
-          topic: "题目内容一",
+          topic: "题目内八",
           answer: "1234",
           passingRate: "20%",
           difficulty: "1",
         },
         {
+          id: "9",
           status: "1",
-          topic: "题目内容一",
+          topic: "题目内容九",
           answer: "1234",
           passingRate: "20%",
           difficulty: "2",
         },
         {
-          status: "1",
-          topic: "题目内容一",
+          id: "10",
+          status: "2",
+          topic: "题目内容十",
           answer: "1234",
           passingRate: "20%",
-          difficulty: "2",
+          difficulty: "0",
         },
         {
+          id: "11",
           status: "1",
-          topic: "题目内容一",
+          topic: "题目内容十一",
           answer: "1234",
           passingRate: "20%",
-          difficulty: "2",
+          difficulty: "0",
         },
         {
-          status: "1",
-          topic: "题目内容一",
+          id: "12",
+          status: "2",
+          topic: "题目内容十二",
           answer: "1234",
           passingRate: "20%",
-          difficulty: "2",
-        },
-        {
-          status: "1",
-          topic: "题目内容一",
-          answer: "1234",
-          passingRate: "20%",
-          difficulty: "2",
-        },
-        {
-          status: "1",
-          topic: "题目内容一",
-          answer: "1234",
-          passingRate: "20%",
-          difficulty: "2",
-        },
-        {
-          status: "1",
-          topic: "题目内容一",
-          answer: "1234",
-          passingRate: "20%",
-          difficulty: "2",
-        },
-        {
-          status: "1",
-          topic: "题目内容一",
-          answer: "1234",
-          passingRate: "20%",
-          difficulty: "2",
+          difficulty: "1",
         },
       ],
       page: {
@@ -187,7 +199,9 @@ export default {
     this.drawCart();
   },
   methods: {
-    openTopic() {},
+    openTopic(index) {
+      window.location.href = "oj/" + index;
+    },
     statusFormat(row) {
       if (row === 0) {
         return "";
@@ -256,12 +270,14 @@ export default {
   position: absolute;
   left: 40px;
 }
+
 .right {
   width: 30%;
   position: absolute;
   right: 40px;
   height: 80%;
 }
+
 .right .center {
   height: 4%;
 }
