@@ -90,7 +90,7 @@
             @click="changeAvatar"
             style="cursor: pointer"
           >
-            <img :src="circleUrl" height="200px" />
+            <img :src="errorCircleUrl" height="200px" />
           </el-avatar>
         </div>
       </div>
@@ -103,6 +103,12 @@
             <Message />
           </el-icon>
           个人信息
+        </el-menu-item>
+        <el-menu-item index="changePwd">
+          <el-icon>
+            <Unlock />
+          </el-icon>
+          修改密码
         </el-menu-item>
         <el-menu-item index="userOperationTwo">
           <el-icon>
@@ -121,7 +127,16 @@
     </el-drawer>
 
     <el-dialog v-model="showAvatar" width="400px" center>
-      <el-image :src="circleUrl" />
+      <div class="avatar_set">
+        <el-avatar
+          v-if="circleUrl"
+          :size="200"
+          :src="circleUrl"
+          @error="errorHandler"
+        >
+          <img :src="errorCircleUrl" height="200px" />
+        </el-avatar>
+      </div>
     </el-dialog>
   </div>
   <el-backtop :right="100" :bottom="100" />
@@ -135,7 +150,7 @@ export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Header",
   created() {
-    this.circleUrl = "";
+    this.circleUrl = require("@/assets/images/avatar.png");
     this.activeIndex = this.$route.matched[0].path;
   },
   data() {
@@ -143,7 +158,8 @@ export default {
       logoImage: require("@/assets/images/logo.png"),
       circleUrl: "",
       activeIndex: "",
-      errorCircleUrl: require("@/assets/images/avatar.png"),
+      errorCircleUrl:
+        "https://cube.elemecdn.com/e/fd/0fc7d20532fdaf769a25683617711png.png",
       userLogin: false,
       user: {
         name: "",
@@ -208,4 +224,19 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.avatar_set {
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  height: auto;
+}
+.avatar_set .btn {
+  width: 200px;
+  display: block;
+  margin: 0 auto;
+  font-size: 15px;
+  line-height: 15px;
+  height: 30px;
+}
+</style>

@@ -18,6 +18,8 @@ import ArticleList from "@/views/article/ArticleList";
 import Navigation from "@/layout/Navigation";
 import NavigationList from "@/views/navigation/NavigationList";
 import ArticleContent from "@/views/article/ArticleContent";
+import Personal from "@/layout/Personal";
+import PersonalInformation from "@/views/personal/PersonalInformation";
 
 const routes = [
   {
@@ -30,6 +32,18 @@ const routes = [
         path: "home",
         name: "Home",
         component: HomeView,
+      },
+    ],
+  },
+  {
+    path: "/personal",
+    name: "Personal",
+    component: Personal,
+    children: [
+      {
+        path: "information",
+        name: "Information",
+        component: PersonalInformation,
       },
     ],
   },

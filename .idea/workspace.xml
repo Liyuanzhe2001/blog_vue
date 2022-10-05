@@ -4,10 +4,8 @@
     <list default="true" id="47c69d8a-441d-4395-9f22-5d90be1c4a44" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/class/ClassHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/class/ClassHeader.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/interview/InterviewList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/interview/InterviewList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/oj/ProblemList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/oj/ProblemList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/oj/Problem.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/oj/Problem.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,6 +148,8 @@
       <workItem from="1664524881092" duration="1080000" />
       <workItem from="1664789958471" duration="4298000" />
       <workItem from="1664884496536" duration="6169000" />
+      <workItem from="1664937033896" duration="1870000" />
+      <workItem from="1664950893434" duration="1820000" />
     </task>
     <servers />
   </component>

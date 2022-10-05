@@ -197,7 +197,7 @@ export default {
   background-color: white;
 }
 .right .select {
-  width: 100px;
+  width: 120px;
   margin: 20px;
 }
 .right .area {
