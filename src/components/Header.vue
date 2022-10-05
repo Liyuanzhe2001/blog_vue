@@ -116,6 +116,12 @@
           </el-icon>
           我的收藏
         </el-menu-item>
+        <el-menu-item index="publishArticle">
+          <el-icon>
+            <Document />
+          </el-icon>
+          发表文章
+        </el-menu-item>
         <el-divider />
         <el-menu-item index="userOperationThree">
           <el-icon>
@@ -218,7 +224,11 @@ export default {
       this.showAvatar = true;
     },
     personalInformation() {
-      console.log("个人信息");
+      if (this.$route.path !== "/personal/information") {
+        window.location.href = "/personal/information";
+      } else {
+        this.userSet = false;
+      }
     },
   },
 };

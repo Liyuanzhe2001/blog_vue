@@ -269,10 +269,14 @@ export default {
   margin-bottom: 20px;
 }
 .right .title {
+  display: inline-block;
   cursor: pointer;
   font-size: 1.3rem;
   margin-bottom: 8px;
   font-weight: bold;
+}
+.right .title:hover {
+  text-decoration: underline;
 }
 .right .content {
   color: dimgray;
