@@ -20,6 +20,7 @@ import NavigationList from "@/views/navigation/NavigationList";
 import ArticleContent from "@/views/article/ArticleContent";
 import Personal from "@/layout/Personal";
 import PersonalInformation from "@/views/personal/PersonalInformation";
+import changePassword from "@/views/ChangePassword";
 
 const routes = [
   {
@@ -61,6 +62,11 @@ const routes = [
         path: "forgetpwd",
         name: "forgetpwd",
         component: ForgotPasswordView,
+      },
+      {
+        path: "changepwd",
+        name: "changepwd",
+        component: changePassword,
       },
     ],
   },

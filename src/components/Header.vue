@@ -98,25 +98,25 @@
         class="el-menu-vertical-demo"
         style="border-right: none; height: 80%"
       >
-        <el-menu-item index="userOperationOne" @click="personalInformation">
+        <el-menu-item @click="personalInformation">
           <el-icon>
             <Message />
           </el-icon>
           个人信息
         </el-menu-item>
-        <el-menu-item index="changePwd">
+        <el-menu-item @click="changePwd">
           <el-icon>
             <Unlock />
           </el-icon>
           修改密码
         </el-menu-item>
-        <el-menu-item index="userOperationTwo">
+        <el-menu-item>
           <el-icon>
             <Star />
           </el-icon>
           我的收藏
         </el-menu-item>
-        <el-menu-item index="publishArticle">
+        <el-menu-item>
           <el-icon>
             <Document />
           </el-icon>
@@ -229,6 +229,9 @@ export default {
       } else {
         this.userSet = false;
       }
+    },
+    changePwd() {
+      window.location.href = "/account/changepwd";
     },
   },
 };
