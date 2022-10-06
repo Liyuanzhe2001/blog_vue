@@ -21,6 +21,7 @@ import ArticleContent from "@/views/article/ArticleContent";
 import Personal from "@/layout/Personal";
 import PersonalInformation from "@/views/personal/PersonalInformation";
 import changePassword from "@/views/ChangePassword";
+import PersonalCollection from "@/views/personal/PersonalCollection";
 
 const routes = [
   {
@@ -45,6 +46,11 @@ const routes = [
         path: "information",
         name: "Information",
         component: PersonalInformation,
+      },
+      {
+        path: "collection",
+        name: "Collection",
+        component: PersonalCollection,
       },
     ],
   },

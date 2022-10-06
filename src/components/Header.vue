@@ -98,32 +98,32 @@
         class="el-menu-vertical-demo"
         style="border-right: none; height: 80%"
       >
-        <el-menu-item @click="personalInformation">
+        <el-menu-item index="one" @click="personalInformation">
           <el-icon>
             <Message />
           </el-icon>
           个人信息
         </el-menu-item>
-        <el-menu-item @click="changePwd">
+        <el-menu-item index="two" @click="changePwd">
           <el-icon>
             <Unlock />
           </el-icon>
           修改密码
         </el-menu-item>
-        <el-menu-item>
+        <el-menu-item index="three" @click="personalCollect">
           <el-icon>
             <Star />
           </el-icon>
           我的收藏
         </el-menu-item>
-        <el-menu-item>
+        <el-menu-item index="four">
           <el-icon>
             <Document />
           </el-icon>
           发表文章
         </el-menu-item>
         <el-divider />
-        <el-menu-item index="userOperationThree">
+        <el-menu-item index="five">
           <el-icon>
             <CloseBold />
           </el-icon>
@@ -233,6 +233,13 @@ export default {
     changePwd() {
       window.location.href = "/account/changepwd";
     },
+    personalCollect() {
+      if (this.$route.path !== "/personal/collection") {
+        window.location.href = "/personal/collection";
+      } else {
+        this.userSet = false;
+      }
+    },
   },
 };
 </script>
@@ -243,13 +250,5 @@ export default {
   cursor: pointer;
   width: 100%;
   height: auto;
-}
-.avatar_set .btn {
-  width: 200px;
-  display: block;
-  margin: 0 auto;
-  font-size: 15px;
-  line-height: 15px;
-  height: 30px;
 }
 </style>
