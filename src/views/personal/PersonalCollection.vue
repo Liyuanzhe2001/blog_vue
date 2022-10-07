@@ -67,7 +67,7 @@
 <script>
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
-  name: "PersonalCollection.vue",
+  name: "PersonalCollection",
   data() {
     return {
       bookmarks: ["默认收藏夹", "收藏夹1", "收藏夹2", "收藏夹3", "收藏夹4"],

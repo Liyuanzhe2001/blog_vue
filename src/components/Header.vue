@@ -116,7 +116,7 @@
           </el-icon>
           我的收藏
         </el-menu-item>
-        <el-menu-item index="four">
+        <el-menu-item index="four" @click="publishArticle">
           <el-icon>
             <Document />
           </el-icon>
@@ -231,11 +231,19 @@ export default {
       }
     },
     changePwd() {
-      window.location.href = "/account/changepwd";
+      this.userSet = false;
+      window.open("/account/changepwd");
     },
     personalCollect() {
       if (this.$route.path !== "/personal/collection") {
         window.location.href = "/personal/collection";
+      } else {
+        this.userSet = false;
+      }
+    },
+    publishArticle() {
+      if (this.$route.path !== "/personal/publish") {
+        window.location.href = "/personal/publish";
       } else {
         this.userSet = false;
       }
