@@ -1,17 +1,5 @@
 <template>
-  <div
-    class="mainBlock"
-    style="
-      display: block;
-      min-height: 520px;
-      height: 100%;
-      width: 100%;
-      padding-top: 20px;
-      background-color: #eeeeee;
-      position: relative;
-      min-width: 1263px;
-    "
-  >
+  <div class="main_block">
     <div class="main_part">
       <el-card style="border-radius: 5px">
         <div class="title">
@@ -29,9 +17,12 @@
             class="input"
             v-model="article.content"
             maxlength="3000"
-            :autosize="{ minRows: 30 }"
+            rows="30"
+            :autosize="false"
+            resize="none"
             show-word-limit
             type="textarea"
+            placeholder="请输入文章内容"
           />
         </div>
         <div class="type">
@@ -71,8 +62,11 @@
             @blur="handleInputConfirm"
           />
           <el-button class="btn" v-else size="small" @click="showInput">
-            + New Tag
+            +&nbsp;&nbsp;标签
           </el-button>
+        </div>
+        <div class="submit">
+          <el-button size="normal" type="primary">提交</el-button>
         </div>
       </el-card>
     </div>
@@ -122,6 +116,17 @@ export default {
 </script>
 
 <style scoped>
+.main_block {
+  display: block;
+  min-height: 520px;
+  height: 100%;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #eeeeee;
+  position: relative;
+  min-width: 1263px;
+}
 .main_part {
   display: block;
   margin: 0 auto;
@@ -169,5 +174,9 @@ export default {
 }
 .main_part .tags .btn {
   width: 80px;
+}
+.main_part .submit {
+  float: right;
+  padding-bottom: 20px;
 }
 </style>

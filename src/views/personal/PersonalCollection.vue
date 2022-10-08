@@ -25,13 +25,13 @@
         v-for="mainContent in mainContents"
         :key="mainContent"
       >
-        <div class="title" @click="jump(mainContent.id)">
+        <div class="title" @click="jumpArticle(mainContent.id)">
           {{ mainContent.title }}
         </div>
         <div class="content">
           {{ mainContent.content }}
         </div>
-        <div class="author">
+        <div class="author" @click="jumpAuthor(mainContent.authorId)">
           <el-icon><User /></el-icon>
           {{ mainContent.author }}
         </div>
@@ -78,6 +78,7 @@ export default {
           // 长度设置100
           content:
             "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
+          authorId: 1,
           author: "liyuanzhe",
           collect: 100,
           labels: ["Java"],
@@ -88,6 +89,7 @@ export default {
           // 长度设置100
           content:
             "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
+          authorId: 1,
           author: "liyuanzhe",
           collect: 100,
           labels: ["Java", "SpringBoot"],
@@ -98,6 +100,7 @@ export default {
           // 长度设置100
           content:
             "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
+          authorId: 1,
           author: "liyuanzhe",
           collect: 100,
           labels: ["Python", "flask"],
@@ -108,6 +111,7 @@ export default {
           // 长度设置100
           content:
             "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
+          authorId: 1,
           author: "liyuanzhe",
           collect: 100,
           labels: ["Go", "Gin"],
@@ -118,6 +122,7 @@ export default {
           // 长度设置100
           content:
             "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
+          authorId: 1,
           author: "liyuanzhe",
           collect: 100,
           labels: ["Java"],
@@ -128,6 +133,7 @@ export default {
           // 长度设置100
           content:
             "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
+          authorId: 1,
           author: "liyuanzhe",
           collect: 100,
           labels: ["Java"],
@@ -138,6 +144,7 @@ export default {
           // 长度设置100
           content:
             "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
+          authorId: 1,
           author: "liyuanzhe",
           collect: 100,
           labels: ["Java"],
@@ -148,6 +155,7 @@ export default {
           // 长度设置100
           content:
             "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
+          authorId: 1,
           author: "liyuanzhe",
           collect: 100,
           labels: ["Java"],
@@ -158,6 +166,7 @@ export default {
           // 长度设置100
           content:
             "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
+          authorId: 1,
           author: "liyuanzhe",
           collect: 100,
           labels: ["Java"],
@@ -168,6 +177,7 @@ export default {
           // 长度设置100
           content:
             "内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容",
+          authorId: 1,
           author: "liyuanzhe",
           collect: 100,
           labels: ["Java"],
@@ -184,7 +194,10 @@ export default {
     };
   },
   methods: {
-    jump(id) {
+    jumpArticle(id) {
+      window.location.href = "/article/" + id;
+    },
+    jumpAuthor(id) {
       window.location.href = "/article/" + id;
     },
     errorHandler() {

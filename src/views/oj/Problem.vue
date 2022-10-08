@@ -80,7 +80,7 @@
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Problem",
-  data: function () {
+  data() {
     return {
       problem: {
         id: this.$route.params.id,
